@@ -1,0 +1,2 @@
+# CASEEEEEEEEEMETHODDDDD2
+semoga berhasil
