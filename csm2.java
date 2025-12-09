@@ -58,6 +58,10 @@ public class csm2 {
         i++;
       }else if (a==2) {
         printSemua();
+      }else if (a==3){
+
+      }else if (a==4) {
+        
       }
     } while (true);
   }
