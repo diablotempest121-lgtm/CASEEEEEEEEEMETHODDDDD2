@@ -43,29 +43,33 @@ public class csm2 {
     status[i] = sc.nextLine();
     System.out.println("=================================================");
   }
+
   static void printSemua() {
     if (i == 0) {
       System.out.println("Belum ada pendaftar");
       return;
     }
-    System.out.printf("%-4s %-20s %-13s %-20s %-20s %-10s %-10s%n","No", "Nama", "NIM", "Prodi", "Perusahaan", "Semester", "Status");
+    System.out.printf("%-4s %-20s %-13s %-20s %-20s %-10s %-10s%n", "No", "Nama", "NIM", "Prodi", "Perusahaan", "Semester", "Status");
     for (int j = 0; j < i; j++) {
-      System.out.printf("%-4d %-20s %-13d %-20s %-20s %-10d %-10s%n",(j + 1), nama[j], NIM[j], prodi[j], perusahaan[j], semester[j], status[j]);
+      System.out.printf("%-4d %-20s %-13d %-20s %-20s %-10d %-10s%n", (j + 1), nama[j], NIM[j], prodi[j], perusahaan[j],
+          semester[j], status[j]);
     }
   }
 
   static void cariProdi() {
     System.out.print("Masukkan prodi yang dicari: ");
     cari = sc.nextLine();
-    System.out.printf("%-4s %-20s %-13s %-20s %-20s %-10s %-10s%n","No", "Nama", "NIM", "Prodi", "Perusahaan", "Semester", "Status");
+    System.out.printf("%-4s %-20s %-13s %-20s %-20s %-10s %-10s%n", "No", "Nama", "NIM", "Prodi", "Perusahaan","Semester", "Status");
     boolean ketemu = false;
     for (int k = 0; k < i; k++) {
       if (prodi[k].equalsIgnoreCase(cari)) {
-        System.out.printf("%-4d %-20s %-13d %-20s %-20s %-10d %-10s%n", (k + 1), nama[k], NIM[k], prodi[k], perusahaan[k], semester[k], status[k]);
+        System.out.printf("%-4d %-20s %-13d %-20s %-20s %-10d %-10s%n", (k + 1), nama[k], NIM[k], prodi[k],
+            perusahaan[k], semester[k], status[k]);
         ketemu = true;
       }
     }
-    System.out.println("===============================================================================================");
+    System.out
+        .println("===============================================================================================");
     if (!ketemu) {
       System.out.println("Tidak ada mahasiswa dari prodi tersebut.");
     }
@@ -79,6 +83,15 @@ public class csm2 {
     } else if (status[j].equalsIgnoreCase("ditolak")) {
       Jmlditolak++;
     }
+  }
+
+  static void jmlStatus() {
+    for (int j = 0; j < i; j++) {
+      JumlahStatus(j);
+    }
+    System.out.println("Jumlah mahasiswa diterima : " + JmlDiterima);
+    System.out.println("Jumlah mahasiswa menunggu : " + Jmlmenunggu);
+    System.out.println("Jumlah mahasiswa ditolak  : " + Jmlditolak);
   }
 
   public static void main(String[] args) {
@@ -96,15 +109,7 @@ public class csm2 {
       } else if (a == 3) {
         cariProdi();
       } else if (a == 4) {
-        JmlDiterima = 0;
-        Jmlmenunggu = 0;
-        Jmlditolak = 0;
-        for (int j = 0; j < i; j++) {
-          JumlahStatus(j);
-        }
-        System.out.println("Jumlah mahasiswa diterima : " + JmlDiterima);
-        System.out.println("Jumlah mahasiswa menunggu : " + Jmlmenunggu);
-        System.out.println("Jumlah mahasiswa ditolak  : " + Jmlditolak);
+        jmlStatus();
       }
     } while (true);
   }
