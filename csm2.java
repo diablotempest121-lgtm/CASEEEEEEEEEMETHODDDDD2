@@ -2,13 +2,7 @@ import java.util.Scanner;
 
 public class csm2 {
   static Scanner sc = new Scanner(System.in);
-  static int maks = 100;
-  static String[] nama = new String[maks];
-  static int[] NIM = new int[maks];
-  static String[] prodi = new String[maks];
-  static String[] perusahaan = new String[maks];
-  static int[] semester = new int[maks];
-  static String[] status = new String[maks];
+  static String[][] dataa=new String[100][6];
   static int i = 0;
   static int JmlDiterima = 0;
   static int Jmlmenunggu = 0;
@@ -28,25 +22,20 @@ public class csm2 {
 
   static void data(int i) {
     System.out.print("Nama mahasiswa: ");
-    nama[i] = sc.nextLine();
+    dataa[i][0] = sc.nextLine();
     System.out.print("NIM: ");
-    NIM[i] = sc.nextInt();
-    sc.nextLine();
+    dataa[i][1] = sc.nextLine();
     System.out.print("Prodi: ");
-    prodi[i] = sc.nextLine();
+    dataa[i][2] = sc.nextLine();
     System.out.print("Perusahaan tujuan magang: ");
-    perusahaan[i] = sc.nextLine();
+    dataa[i][3] = sc.nextLine();
     System.out.print("Semester pengambilan magang(6 atau 7): ");
-    semester[i] = sc.nextInt();
-    if (semester[i]!=6 && semester[i]!=7){
-      System.out.print("Data tidak valid")
-    }
-    sc.nextLine();
+    dataa[i][4] = sc.nextLine();
     System.out.print("Status magang (diterima/menunggu/ditolak): ");
-    status[i] = sc.nextLine();
+    dataa[i][5] = sc.nextLine();
     System.out.println("=================================================");
   }
-i++
+
   static void printSemua() {
     if (i == 0) {
       System.out.println("Belum ada pendaftar");
@@ -54,8 +43,8 @@ i++
     }
     System.out.printf("%-4s %-20s %-13s %-20s %-20s %-10s %-10s%n", "No", "Nama", "NIM", "Prodi", "Perusahaan", "Semester", "Status");
     for (int j = 0; j < i; j++) {
-      System.out.printf("%-4d %-20s %-13d %-20s %-20s %-10d %-10s%n", (j + 1), nama[j], NIM[j], prodi[j], perusahaan[j],
-          semester[j], status[j]);
+      System.out.printf("%-4s %-20s %-13s %-20s %-20s %-10s %-10s%n", (j + 1), dataa[j][0], dataa[j][1], dataa[j][2], dataa[j][3],
+        dataa[j][4], dataa[j][5]);
     }
   }
 
@@ -65,9 +54,9 @@ i++
     System.out.printf("%-4s %-20s %-13s %-20s %-20s %-10s %-10s%n", "No", "Nama", "NIM", "Prodi", "Perusahaan","Semester", "Status");
     boolean ketemu = false;
     for (int k = 0; k < i; k++) {
-      if (prodi[k].equalsIgnoreCase(cari)) {
-        System.out.printf("%-4d %-20s %-13d %-20s %-20s %-10d %-10s%n", (k + 1), nama[k], NIM[k], prodi[k],
-            perusahaan[k], semester[k], status[k]);
+      if (dataa[k][2].equalsIgnoreCase(cari)) {
+        System.out.printf("%-4s %-20s %-13s %-20s %-20s %-10s %-10s%n", (k + 1), dataa[k][0], dataa[k][1], dataa[k][2],
+            dataa[k][3], dataa[k][4], dataa[k][5]);
         ketemu = true;
       }
     }
@@ -79,11 +68,11 @@ i++
   }
 
   static void JumlahStatus(int j) {
-    if (status[j].equalsIgnoreCase("diterima")) {
+    if (dataa[j][5].equalsIgnoreCase("diterima")) {
       JmlDiterima++;
-    } else if (status[j].equalsIgnoreCase("menunggu")) {
+    } else if (dataa[j][5].equalsIgnoreCase("menunggu")) {
       Jmlmenunggu++;
-    } else if (status[j].equalsIgnoreCase("ditolak")) {
+    } else if (dataa[j][5].equalsIgnoreCase("ditolak")) {
       Jmlditolak++;
     }
   }
