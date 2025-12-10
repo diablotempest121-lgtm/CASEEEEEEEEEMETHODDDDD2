@@ -36,7 +36,7 @@ public class csm2 {
     prodi[i] = sc.nextLine();
     System.out.print("Perusahaan tujuan magang: ");
     perusahaan[i] = sc.nextLine();
-    System.out.print("Semester pengambilan magang: ");
+    System.out.print("Semester pengambilan magang(6 atau 7): ");
     semester[i] = sc.nextInt();
     sc.nextLine();
     System.out.print("Status magang (diterima/menunggu/ditolak): ");
