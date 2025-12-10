@@ -63,7 +63,7 @@ public class csm2 {
     System.out
         .println("===============================================================================================");
     if (!ketemu) {
-      System.out.println("Tidak ada mahasiswa dari prodi tersebut.");
+      System.out.println("Tidak Ada mahasiswa dari prodi tersebut.");
     }
   }
 
