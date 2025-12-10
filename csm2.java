@@ -38,12 +38,15 @@ public class csm2 {
     perusahaan[i] = sc.nextLine();
     System.out.print("Semester pengambilan magang(6 atau 7): ");
     semester[i] = sc.nextInt();
+    if (semester[i]!=6 && semester[i]!=7){
+      System.out.print("Data tidak valid")
+    }
     sc.nextLine();
     System.out.print("Status magang (diterima/menunggu/ditolak): ");
     status[i] = sc.nextLine();
     System.out.println("=================================================");
   }
-
+i++
   static void printSemua() {
     if (i == 0) {
       System.out.println("Belum ada pendaftar");
