@@ -11,7 +11,7 @@ public class csm2 {
 
   static void tampilan() {
     System.out.println();
-    System.out.println("=== Sistem Pendaftaran Magang Mahasiswa ===");
+    System.out.println("=== SISTEM PENDAFTARAN MAGANG MAHASISWA ===");
     System.out.println("1. Tambah data magang");
     System.out.println("2. Tampilkan semua pendaftar magang");
     System.out.println("3. Cari pendaftar berdasarkan program study");
